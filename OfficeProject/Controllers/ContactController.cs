@@ -22,9 +22,29 @@ namespace OfficeProject.Controllers
             _logger = logger;
         }
 
-        public IActionResult Index(int pg=1)
+        public IActionResult Index(string searchTerm, string sortOrder, int pg = 1)
         {
             var contacts = _context.Query<Contact>("GetContacts", commandType: CommandType.StoredProcedure).ToList();
+
+            if (!string.IsNullOrEmpty(searchTerm))
+            {
+                contacts = contacts.Where(c => c.Name.Contains(searchTerm) ||
+                                                c.Email.Contains(searchTerm) ||
+                                                c.City.Contains(searchTerm) ||
+                                                c.Skills.Contains(searchTerm)).ToList();
+            }
+
+            ViewData["NameOrder"] = string.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            switch (sortOrder)
+            {
+                case "name_desc":
+                    contacts = contacts.OrderByDescending(a => a.Name).ToList();
+                    break;
+                default:
+                    contacts = contacts.OrderBy(a => a.Name).ToList();
+                    break;
+            }
+
             const int pageSize = 5;
             if(pg < 1)
             {
