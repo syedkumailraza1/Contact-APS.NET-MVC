@@ -1,5 +1,7 @@
 ﻿@model IEnumerable<OfficeProject.Models.Contact>
 
+
+
 @{
     ViewData["Title"] = "Contacts";
 
@@ -12,11 +14,14 @@
     }
 }
 
-<h1>Contacts</h1>
+<h1 class="no-print">Contacts</h1>
 
-<div style="display:flex; justify-content: space-between">
+<div style="display:flex; justify-content: space-between" class="no-print">
     <p>
-        <a asp-action="Create" class="btn btn-outline-primary align-end">Create</a>
+        <a asp-action="Create" class="btn btn-outline-success align-end">Create</a>
+        <a asp-controller="Contact" asp-action="Excel" class="btn btn-outline-primary">Export to Excel</a>
+        <button onclick="printPage()" class="btn btn-outline-primary">Print</button>
+
     </p>
 
     <div style="display: flex">
@@ -32,7 +37,23 @@
             </div>
         </form>
 
-        <a asp-action="Index" asp-route-sortOrder="@ViewData["NameOrder"]"><i class="bi bi-filter-square"></i></a>
+        <form asp-action="Index" method="get">
+    <p>
+        Sort by:
+        <select name="sortOrder">
+            <option value="">Select</option>
+            <option value="name_desc">Name Descending</option>
+            <option value="email_asc">Email Ascending</option>
+            <option value="email_desc">Email Descending</option>
+            <option value="city_asc">City Ascending</option>
+            <option value="city_desc">City Descending</option>
+        </select>
+                <input type="submit" value="Apply" class="btn btn-outline-primary" />
+    </p>
+</form>
+
+
+    
     </div>
     
 </div>
@@ -67,7 +88,7 @@
     </tbody>
 </table>
 
-<div class="container">
+<div class="container no-print">
     @if (pager.TotalPages > 0)
     {
         <ul class="pagination justify-content-center">
@@ -88,6 +109,9 @@
                 $(this).closest("form").submit();
             });
         });
+        function printPage() {
+            window.print();
+        }
     </script>
 }
     

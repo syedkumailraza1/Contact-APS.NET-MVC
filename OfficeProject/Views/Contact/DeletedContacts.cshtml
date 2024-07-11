@@ -1,0 +1,38 @@
+﻿@model IEnumerable<OfficeProject.Models.Contact>
+
+<h1>Deleted Contacts</h1>
+
+@if (!Model.Any())
+{
+    <p>No deleted contacts found.</p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>City</th>
+                <th>Skills</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var contact in Model)
+            {
+                <tr>
+                    <td>@contact.Name</td>
+                    <td>@contact.Email</td>
+                    <td>@contact.City</td>
+                    <td>@contact.Skills</td>
+                    <td>
+                        <form asp-action="Restore" asp-route-id="@contact.Id" method="post">
+                            <button type="submit" class="btn  btn-outline-success">Restore</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

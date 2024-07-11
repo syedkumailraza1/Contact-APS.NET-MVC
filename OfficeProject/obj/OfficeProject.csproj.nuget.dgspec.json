@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "A:\\Internship\\OfficeProject\\OfficeProject\\OfficeProject.csproj": {}
+    "C:\\Users\\hp\\Desktop\\C# ASP.NET MVC\\Contact-APS.NET-MVC\\OfficeProject\\OfficeProject.csproj": {}
   },
   "projects": {
-    "A:\\Internship\\OfficeProject\\OfficeProject\\OfficeProject.csproj": {
+    "C:\\Users\\hp\\Desktop\\C# ASP.NET MVC\\Contact-APS.NET-MVC\\OfficeProject\\OfficeProject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "A:\\Internship\\OfficeProject\\OfficeProject\\OfficeProject.csproj",
+        "projectUniqueName": "C:\\Users\\hp\\Desktop\\C# ASP.NET MVC\\Contact-APS.NET-MVC\\OfficeProject\\OfficeProject.csproj",
         "projectName": "OfficeProject",
-        "projectPath": "A:\\Internship\\OfficeProject\\OfficeProject\\OfficeProject.csproj",
+        "projectPath": "C:\\Users\\hp\\Desktop\\C# ASP.NET MVC\\Contact-APS.NET-MVC\\OfficeProject\\OfficeProject.csproj",
         "packagesPath": "C:\\Users\\hp\\.nuget\\packages\\",
-        "outputPath": "A:\\Internship\\OfficeProject\\OfficeProject\\obj\\",
+        "outputPath": "C:\\Users\\hp\\Desktop\\C# ASP.NET MVC\\Contact-APS.NET-MVC\\OfficeProject\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\hp\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -45,6 +45,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "ClosedXML": {
+              "target": "Package",
+              "version": "[0.102.2, )"
+            },
             "Dapper": {
               "target": "Package",
               "version": "[2.1.35, )"

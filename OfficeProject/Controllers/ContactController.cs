@@ -1,30 +1,29 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using ClosedXML.Excel;
+using DocumentFormat.OpenXml.Spreadsheet;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using Dapper;
+using OfficeProject.Data;
 using OfficeProject.Models;
-using Microsoft.AspNetCore.Http;
 
 namespace OfficeProject.Controllers
 {
     public class ContactController : Controller
     {
-        private readonly IDbConnection _context;
+        private readonly IContactRepository _repository;
         private readonly ILogger<ContactController> _logger;
 
-        public ContactController(IDbConnection context, ILogger<ContactController> logger)
+        public ContactController(IContactRepository repository, ILogger<ContactController> logger)
         {
-            _context = context;
+            _repository = repository;
             _logger = logger;
         }
 
-        public IActionResult Index(string searchTerm, string sortOrder, int pg = 1)
+        public async Task<IActionResult> Index(string searchTerm, string sortOrder, int pg = 1)
         {
-            var contacts = _context.Query<Contact>("GetContacts", commandType: CommandType.StoredProcedure).ToList();
+            var contacts = (await _repository.GetContactsAsync()).ToList();
 
             if (!string.IsNullOrEmpty(searchTerm))
             {
@@ -34,19 +33,32 @@ namespace OfficeProject.Controllers
                                                 c.Skills.Contains(searchTerm)).ToList();
             }
 
-            ViewData["NameOrder"] = string.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            // Sorting logic
             switch (sortOrder)
             {
                 case "name_desc":
                     contacts = contacts.OrderByDescending(a => a.Name).ToList();
+                    break;
+                case "email_asc":
+                    contacts = contacts.OrderBy(a => a.Email).ToList();
+                    break;
+                case "email_desc":
+                    contacts = contacts.OrderByDescending(a => a.Email).ToList();
+                    break;
+                case "city_asc":
+                    contacts = contacts.OrderBy(a => a.City).ToList();
+                    break;
+                case "city_desc":
+                    contacts = contacts.OrderByDescending(a => a.City).ToList();
                     break;
                 default:
                     contacts = contacts.OrderBy(a => a.Name).ToList();
                     break;
             }
 
+
             const int pageSize = 5;
-            if(pg < 1)
+            if (pg < 1)
             {
                 pg = 1;
             }
@@ -56,7 +68,46 @@ namespace OfficeProject.Controllers
             var data = contacts.Skip(recSkip).Take(pageSize).ToList();
             this.ViewBag.Pager = pager;
 
+            ViewData["CurrentSort"] = sortOrder;
+
             return View(data);
+        }
+
+        public async Task<IActionResult> Excel()
+        {
+            var contacts = await _repository.GetContactsAsync();
+
+            using (var workbook = new XLWorkbook())
+            {
+                var worksheet = workbook.Worksheets.Add("Contacts");
+                var currentRow = 1;
+                worksheet.Cell(currentRow, 1).Value = "Id";
+                worksheet.Cell(currentRow, 2).Value = "Name";
+                worksheet.Cell(currentRow, 3).Value = "Email";
+                worksheet.Cell(currentRow, 4).Value = "City";
+                worksheet.Cell(currentRow, 5).Value = "Skills";
+
+                foreach (var contact in contacts)
+                {
+                    currentRow++;
+                    worksheet.Cell(currentRow, 1).Value = contact.Id;
+                    worksheet.Cell(currentRow, 2).Value = contact.Name;
+                    worksheet.Cell(currentRow, 3).Value = contact.Email;
+                    worksheet.Cell(currentRow, 4).Value = contact.City;
+                    worksheet.Cell(currentRow, 5).Value = contact.Skills;
+                }
+
+                using (var stream = new MemoryStream())
+                {
+                    workbook.SaveAs(stream);
+                    var content = stream.ToArray();
+
+                    return File(
+                        content,
+                        "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                        "contacts.xlsx");
+                }
+            }
         }
 
         public IActionResult Create()
@@ -74,15 +125,7 @@ namespace OfficeProject.Controllers
                 {
                     _logger.LogInformation("Received Contact: {@Contact}", contact);
 
-                    // Process selected skills
-                    var selectedSkills = contact.Skills; // Assuming Skills is a string of comma-separated values
-
-                    // Insert into database
-                    var query = "INSERT INTO Contacts (Name, Email, City, Skills) VALUES (@Name, @Email, @City, @Skills)";
-                    var parameters = new { contact.Name, contact.Email, contact.City, Skills = selectedSkills };
-
-                    _logger.LogInformation("Executing SQL query: {Query}", query);
-                    await _context.ExecuteAsync(query, parameters);
+                    await _repository.AddContactAsync(contact);
 
                     _logger.LogInformation("Contact successfully created in the database.");
                     return RedirectToAction(nameof(Index));
@@ -94,27 +137,20 @@ namespace OfficeProject.Controllers
                 }
             }
 
-            // If ModelState is not valid, return to the view with validation errors
             _logger.LogWarning("Model state invalid. Errors: {Errors}", ModelState.Values.SelectMany(v => v.Errors));
             return View(contact);
         }
 
-
         [HttpGet]
-        public IActionResult Edit(int id)
+        public async Task<IActionResult> Edit(int id)
         {
-            var parameters = new DynamicParameters();
-            parameters.Add("@Id", id, DbType.Int32);
-
-            var contact = _context.QueryFirstOrDefault<Contact>("GetContactById", parameters, commandType: CommandType.StoredProcedure);
+            var contact = await _repository.GetContactByIdAsync(id);
 
             if (contact == null)
             {
                 return NotFound();
             }
 
-            // Fetch all skills
-            var allSkills = GetSkills();
             var contactViewModel = new Contact
             {
                 Id = contact.Id,
@@ -127,22 +163,18 @@ namespace OfficeProject.Controllers
             return View(contactViewModel);
         }
 
-
-
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Edit(Contact contact, IFormCollection form)
+        public async Task<IActionResult> Edit(Contact contact, IFormCollection form)
         {
             if (ModelState.IsValid)
             {
                 try
                 {
                     var selectedSkills = form["Skills"].ToList();
-                    var skillsString = string.Join(",", selectedSkills);
+                    contact.Skills = string.Join(",", selectedSkills);
 
-                    var query = "UPDATE Contacts SET Name = @Name, Email = @Email, City = @City, Skills = @Skills WHERE Id = @Id";
-                    var parameters = new { contact.Name, contact.Email, contact.City, Skills = skillsString, contact.Id };
-                    _context.Execute(query, parameters);
+                    await _repository.UpdateContactAsync(contact);
 
                     _logger.LogInformation("Contact successfully updated in the database.");
                     return RedirectToAction(nameof(Index));
@@ -156,16 +188,44 @@ namespace OfficeProject.Controllers
             return View(contact);
         }
 
+        [HttpPost]
+        public async Task<IActionResult> Delete(int id)
+        {
+            try
+            {
+                await _repository.DeleteContactAsync(id);
+
+                _logger.LogInformation("Contact successfully marked as deleted in the database.");
+                return RedirectToAction(nameof(Index));
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error occurred while deleting contact from database.");
+                return BadRequest();
+            }
+        }
+
+        public async Task<IActionResult> DeletedContacts()
+        {
+            var deletedContacts = (await _repository.GetDeletedContactsAsync()).ToList();
+            return View(deletedContacts);
+        }
 
         [HttpPost]
-        public IActionResult Delete(int id)
+        public async Task<IActionResult> Restore(int id)
         {
-            var parameters = new DynamicParameters();
-            parameters.Add("@Id", id, DbType.Int32);
-            _context.Execute("DeleteContact", parameters, commandType: CommandType.StoredProcedure);
+            try
+            {
+                await _repository.RestoreContactAsync(id);
 
-            _logger.LogInformation("Contact successfully deleted from the database.");
-            return RedirectToAction(nameof(Index));
+                _logger.LogInformation("Contact successfully restored.");
+                return RedirectToAction(nameof(Index));
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error occurred while restoring contact.");
+                return BadRequest();
+            }
         }
 
         private List<string> GetSkills()

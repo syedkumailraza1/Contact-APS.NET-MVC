@@ -1,6 +1,7 @@
 using System.Data;
 using System.Data.SqlClient;
 using Microsoft.Extensions.DependencyInjection;
+using OfficeProject.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,6 +9,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 builder.Services.AddTransient<IDbConnection>(provider =>
     new SqlConnection(builder.Configuration.GetConnectionString("DefaultConnection")));
+builder.Services.AddScoped<IContactRepository, ContactRepository>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

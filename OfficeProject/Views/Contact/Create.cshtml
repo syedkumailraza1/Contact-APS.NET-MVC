@@ -4,22 +4,23 @@
 <hr />
 <form asp-action="Create" method="post">
     <div class="form-group">
-        <label asp-for="Name" class="control-label"></label>
+
+        @Html.Label("Name")
         <input asp-for="Name" class="form-control" />
         <span asp-validation-for="Name" class="text-danger"></span>
     </div>
     <div class="form-group">
-        <label asp-for="Email" class="control-label"></label>
+        @Html.Label("Email")
         <input asp-for="Email" class="form-control" />
         <span asp-validation-for="Email" class="text-danger"></span>
     </div>
     <div class="form-group">
-        <label asp-for="City" class="control-label"></label>
+        @Html.Label("City")
         <input asp-for="City" class="form-control" />
         <span asp-validation-for="City" class="text-danger"></span>
     </div>
     <div class="form-group">
-        <label class="control-label col-md-2">Skills</label>
+        @Html.Label("Skills")
         <div class="col-md-10">
             @foreach (var skill in new List<string> { "C#", "JavaScript", "Java", "Python" })
             {
