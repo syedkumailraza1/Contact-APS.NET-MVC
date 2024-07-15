@@ -2,21 +2,22 @@
 
 <h1>Create Contact</h1>
 <hr />
-<form asp-action="Create" method="post">
-    <div class="form-group">
 
-        @Html.Label("Name")
-        <input asp-for="Name" class="form-control" />
+@using (Html.BeginForm("Create", "Contact", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.Name)<br />
+        @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
         <span asp-validation-for="Name" class="text-danger"></span>
     </div>
     <div class="form-group">
-        @Html.Label("Email")
-        <input asp-for="Email" class="form-control" />
+        @Html.LabelFor(m => m.Email)<br />
+        @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
         <span asp-validation-for="Email" class="text-danger"></span>
     </div>
     <div class="form-group">
-        @Html.Label("City")
-        <input asp-for="City" class="form-control" />
+        @Html.LabelFor(m => m.City)<br />
+        @Html.TextBoxFor(m => m.City, new { @class = "form-control" })
         <span asp-validation-for="City" class="text-danger"></span>
     </div>
     <div class="form-group">
@@ -25,7 +26,7 @@
             @foreach (var skill in new List<string> { "C#", "JavaScript", "Java", "Python" })
             {
                 <label class="checkbox-inline">
-                    <input type="checkbox" asp-for="Skills" value="@skill" /> @skill
+                    <input type="checkbox" name="Skills" value="@skill" /> @skill
                 </label>
             }
             <span asp-validation-for="Skills" class="text-danger"></span>
@@ -34,10 +35,8 @@
     <div class="mt-3">
         <button type="submit" class="btn btn-outline-success">Submit</button>
         <a asp-action="Index" asp-controller="Contact" class="btn btn-outline-primary ms-2">Back</a>
-
     </div>
-    
-</form>
+}
 
 @section Scripts {
     @{

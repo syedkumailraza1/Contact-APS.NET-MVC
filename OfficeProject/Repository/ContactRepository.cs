@@ -2,6 +2,7 @@
 using System.Data;
 using System.Threading.Tasks;
 using Dapper;
+using DocumentFormat.OpenXml.InkML;
 using OfficeProject.Models;
 
 namespace OfficeProject.Data
@@ -17,7 +18,6 @@ namespace OfficeProject.Data
         Task RestoreContactAsync(int id);
     }
 
-
     public class ContactRepository : IContactRepository
     {
         private readonly IDbConnection _context;
@@ -29,7 +29,7 @@ namespace OfficeProject.Data
 
         public async Task<IEnumerable<Contact>> GetContactsAsync()
         {
-            var contacts = await _context.QueryAsync<Contact>("SELECT * FROM Contacts WHERE isDeleted = 0");
+            var contacts = await _context.QueryAsync<Contact>("GetContacts", commandType: CommandType.StoredProcedure);
             return contacts;
         }
 
@@ -38,23 +38,31 @@ namespace OfficeProject.Data
             var parameters = new DynamicParameters();
             parameters.Add("@Id", id, DbType.Int32);
 
-            var contact = await _context.QueryFirstOrDefaultAsync<Contact>("SELECT * FROM Contacts WHERE Id = @Id AND isDeleted = 0", parameters);
+            var contact = await _context.QueryFirstOrDefaultAsync<Contact>("GetContactById", parameters, commandType: CommandType.StoredProcedure);
             return contact;
         }
 
-
         public async Task AddContactAsync(Contact contact)
         {
-            var query = "INSERT INTO Contacts (Name, Email, City, Skills) VALUES (@Name, @Email, @City, @Skills)";
-            var parameters = new { contact.Name, contact.Email, contact.City, contact.Skills };
-            await _context.ExecuteAsync(query, parameters);
+            var parameters = new DynamicParameters();
+            parameters.Add("@Name", contact.Name, DbType.String);
+            parameters.Add("@Email", contact.Email, DbType.String);
+            parameters.Add("@City", contact.City, DbType.String);
+            parameters.Add("@Skills", contact.Skills, DbType.String);
+
+            await _context.ExecuteAsync("InsertContact", parameters, commandType: CommandType.StoredProcedure);
         }
 
         public async Task UpdateContactAsync(Contact contact)
         {
-            var query = "UPDATE Contacts SET Name = @Name, Email = @Email, City = @City, Skills = @Skills WHERE Id = @Id";
-            var parameters = new { contact.Name, contact.Email, contact.City, contact.Skills, contact.Id };
-            await _context.ExecuteAsync(query, parameters);
+            var parameters = new DynamicParameters();
+            parameters.Add("@Id", contact.Id, DbType.Int32);
+            parameters.Add("@Name", contact.Name, DbType.String);
+            parameters.Add("@Email", contact.Email, DbType.String);
+            parameters.Add("@City", contact.City, DbType.String);
+            parameters.Add("@Skills", contact.Skills, DbType.String);
+
+            await _context.ExecuteAsync("UpdateContact", parameters, commandType: CommandType.StoredProcedure);
         }
 
         public async Task DeleteContactAsync(int id)
@@ -62,13 +70,13 @@ namespace OfficeProject.Data
             var parameters = new DynamicParameters();
             parameters.Add("@Id", id, DbType.Int32);
 
-            var query = "UPDATE Contacts SET isDeleted = 1 WHERE Id = @Id";
-            await _context.ExecuteAsync(query, parameters);
+            await _context.ExecuteAsync("DeleteContact", parameters, commandType: CommandType.StoredProcedure);
         }
+
 
         public async Task<IEnumerable<Contact>> GetDeletedContactsAsync()
         {
-            var deletedContacts = await _context.QueryAsync<Contact>("SELECT * FROM Contacts WHERE isDeleted = 1");
+            var deletedContacts = await _context.QueryAsync<Contact>("GetDeletedContacts", commandType: CommandType.StoredProcedure);
             return deletedContacts;
         }
 
@@ -77,10 +85,7 @@ namespace OfficeProject.Data
             var parameters = new DynamicParameters();
             parameters.Add("@Id", id, DbType.Int32);
 
-            var query = "UPDATE Contacts SET isDeleted = 0 WHERE Id = @Id";
-            await _context.ExecuteAsync(query, parameters);
+            await _context.ExecuteAsync("RestoreContact", parameters, commandType: CommandType.StoredProcedure);
         }
-
-
     }
 }

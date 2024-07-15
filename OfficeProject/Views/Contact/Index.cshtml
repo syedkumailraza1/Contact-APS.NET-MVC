@@ -1,7 +1,5 @@
 ﻿@model IEnumerable<OfficeProject.Models.Contact>
 
-
-
 @{
     ViewData["Title"] = "Contacts";
 
@@ -12,6 +10,12 @@
         pager = ViewBag.Pager;
         pageNo = pager.CurrentPage;
     }
+
+    // Retrieve the current sort order and direction from the query string
+    var currentSort = Context.Request.Query["sortOrder"];
+    var nameSortDirection = currentSort == "name_asc" ? "desc" : "asc";
+    var emailSortDirection = currentSort == "email_asc" ? "desc" : "asc";
+    var citySortDirection = currentSort == "city_asc" ? "desc" : "asc";
 }
 
 <h1 class="no-print">Contacts</h1>
@@ -21,7 +25,6 @@
         <a asp-action="Create" class="btn btn-outline-success align-end">Create</a>
         <a asp-controller="Contact" asp-action="Excel" class="btn btn-outline-primary">Export to Excel</a>
         <button onclick="printPage()" class="btn btn-outline-primary">Print</button>
-
     </p>
 
     <div style="display: flex">
@@ -36,34 +39,27 @@
                 </div>
             </div>
         </form>
-
-        <form asp-action="Index" method="get">
-    <p>
-        Sort by:
-        <select name="sortOrder">
-            <option value="">Select</option>
-            <option value="name_desc">Name Descending</option>
-            <option value="email_asc">Email Ascending</option>
-            <option value="email_desc">Email Descending</option>
-            <option value="city_asc">City Ascending</option>
-            <option value="city_desc">City Descending</option>
-        </select>
-                <input type="submit" value="Apply" class="btn btn-outline-primary" />
-    </p>
-</form>
-
-
-    
     </div>
-    
 </div>
 
 <table class="table">
     <thead>
         <tr>
-            <th>Name</th>
-            <th>Email</th>
-            <th>City</th>
+            <th>
+                <a asp-action="Index" style="text-decoration:none; color:black" asp-route-sortOrder="name_@nameSortDirection" asp-route-searchTerm="@Context.Request.Query["searchTerm"]">
+                    Name @(currentSort == "name_asc" ? "" : (currentSort == "name_desc" ? "" : ""))
+                </a>
+            </th>
+            <th>
+                <a asp-action="Index" style="text-decoration:none; color:black" asp-route-sortOrder="email_@emailSortDirection" asp-route-searchTerm="@Context.Request.Query["searchTerm"]">
+                    Email @(currentSort == "email_asc" ? "" : (currentSort == "email_desc" ? "" : ""))
+                </a>
+            </th>
+            <th>
+                <a asp-action="Index" style="text-decoration:none; color:black" asp-route-sortOrder="city_@citySortDirection" asp-route-searchTerm="@Context.Request.Query["searchTerm"]">
+                    City @(currentSort == "city_asc" ? "" : (currentSort == "city_desc" ? "" : ""))
+                </a>
+            </th>
             <th>Skill</th>
             <th></th>
         </tr>
@@ -94,8 +90,8 @@
         <ul class="pagination justify-content-center">
             @for (var pge = pager.StartPage; pge <= pager.EndPage; pge++)
             {
-                <li class="page-item @(pge == pager.CurrentPage? "active":"")">
-                    <a class="page-link" asp-asp-controller="Contact" asp-action="Index" asp-route-pg="@pge" asp-route-searchTerm="@Context.Request.Query["searchTerm"]">@pge</a>
+                <li class="page-item @(pge == pager.CurrentPage ? "active" : "")">
+                    <a class="page-link" asp-controller="Contact" asp-action="Index" asp-route-pg="@pge" asp-route-searchTerm="@Context.Request.Query["searchTerm"]">@pge</a>
                 </li>
             }
         </ul>
@@ -114,4 +110,3 @@
         }
     </script>
 }
-    

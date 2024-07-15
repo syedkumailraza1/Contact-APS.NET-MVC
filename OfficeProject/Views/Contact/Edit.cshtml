@@ -4,17 +4,17 @@
 <hr />
 <form asp-action="Edit" method="post">
     <div class="form-group">
-        @Html.Label("Name")
+        @Html.LabelFor(m => m.Name)
         <input asp-for="Name" class="form-control" />
         <span asp-validation-for="Name" class="text-danger"></span>
     </div>
     <div class="form-group">
-        @Html.Label("Email")
+        @Html.LabelFor(m => m.Email)
         <input asp-for="Email" class="form-control" />
         <span asp-validation-for="Email" class="text-danger"></span>
     </div>
     <div class="form-group">
-        @Html.Label("City")
+        @Html.LabelFor(m => m.City)
         <input asp-for="City" class="form-control" />
         <span asp-validation-for="City" class="text-danger"></span>
     </div>
@@ -23,9 +23,9 @@
         <div class="col-md-10">
             @foreach (var skill in new List<string> { "C#", "JavaScript", "Java", "Python" })
             {
-                var isChecked = Model.Skills != null && Model.Skills.Contains(skill) ? "checked" : "";
+                var isChecked = Model.Skills != null && Model.Skills.Contains(skill);
                 <label class="checkbox-inline">
-                    <input type="checkbox" name="Skills" value="@skill" @isChecked /> @skill
+                    <input type="checkbox" name="Skills" value="@skill" @(isChecked ? "checked" : "") /> @skill
                 </label>
             }
             <span asp-validation-for="Skills" class="text-danger"></span>
