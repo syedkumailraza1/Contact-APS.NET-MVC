@@ -3,24 +3,56 @@
   "WorkspaceRootPath": "C:\\Users\\hp\\Desktop\\C# ASP.NET MVC\\Contact-APS.NET-MVC\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{55057115-F3E8-425E-A73A-FD3ED16A0425}|OfficeProject\\OfficeProject.csproj|c:\\users\\hp\\desktop\\c# asp.net mvc\\contact-aps.net-mvc\\officeproject\\views\\contact\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{55057115-F3E8-425E-A73A-FD3ED16A0425}|OfficeProject\\OfficeProject.csproj|solutionrelative:officeproject\\views\\contact\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{55057115-F3E8-425E-A73A-FD3ED16A0425}|OfficeProject\\OfficeProject.csproj|c:\\users\\hp\\desktop\\c# asp.net mvc\\contact-aps.net-mvc\\officeproject\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{55057115-F3E8-425E-A73A-FD3ED16A0425}|OfficeProject\\OfficeProject.csproj|solutionrelative:officeproject\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{55057115-F3E8-425E-A73A-FD3ED16A0425}|OfficeProject\\OfficeProject.csproj|c:\\users\\hp\\desktop\\c# asp.net mvc\\contact-aps.net-mvc\\officeproject\\views\\contact\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{55057115-F3E8-425E-A73A-FD3ED16A0425}|OfficeProject\\OfficeProject.csproj|solutionrelative:officeproject\\views\\contact\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{55057115-F3E8-425E-A73A-FD3ED16A0425}|OfficeProject\\OfficeProject.csproj|c:\\users\\hp\\desktop\\c# asp.net mvc\\contact-aps.net-mvc\\officeproject\\repository\\contactrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{55057115-F3E8-425E-A73A-FD3ED16A0425}|OfficeProject\\OfficeProject.csproj|solutionrelative:officeproject\\repository\\contactrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{55057115-F3E8-425E-A73A-FD3ED16A0425}|OfficeProject\\OfficeProject.csproj|c:\\users\\hp\\desktop\\c# asp.net mvc\\contact-aps.net-mvc\\officeproject\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55057115-F3E8-425E-A73A-FD3ED16A0425}|OfficeProject\\OfficeProject.csproj|solutionrelative:officeproject\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{55057115-F3E8-425E-A73A-FD3ED16A0425}|OfficeProject\\OfficeProject.csproj|c:\\users\\hp\\desktop\\c# asp.net mvc\\contact-aps.net-mvc\\officeproject\\controllers\\contactcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{55057115-F3E8-425E-A73A-FD3ED16A0425}|OfficeProject\\OfficeProject.csproj|solutionrelative:officeproject\\controllers\\contactcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{55057115-F3E8-425E-A73A-FD3ED16A0425}|OfficeProject\\OfficeProject.csproj|c:\\users\\hp\\desktop\\c# asp.net mvc\\contact-aps.net-mvc\\officeproject\\officeproject.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{55057115-F3E8-425E-A73A-FD3ED16A0425}|OfficeProject\\OfficeProject.csproj|solutionrelative:officeproject\\officeproject.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{55057115-F3E8-425E-A73A-FD3ED16A0425}|OfficeProject\\OfficeProject.csproj|c:\\users\\hp\\desktop\\c# asp.net mvc\\contact-aps.net-mvc\\officeproject\\repository\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55057115-F3E8-425E-A73A-FD3ED16A0425}|OfficeProject\\OfficeProject.csproj|solutionrelative:officeproject\\repository\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55057115-F3E8-425E-A73A-FD3ED16A0425}|OfficeProject\\OfficeProject.csproj|c:\\users\\hp\\desktop\\c# asp.net mvc\\contact-aps.net-mvc\\officeproject\\repository\\contactrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55057115-F3E8-425E-A73A-FD3ED16A0425}|OfficeProject\\OfficeProject.csproj|solutionrelative:officeproject\\repository\\contactrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55057115-F3E8-425E-A73A-FD3ED16A0425}|OfficeProject\\OfficeProject.csproj|c:\\users\\hp\\desktop\\c# asp.net mvc\\contact-aps.net-mvc\\officeproject\\models\\contact.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55057115-F3E8-425E-A73A-FD3ED16A0425}|OfficeProject\\OfficeProject.csproj|solutionrelative:officeproject\\models\\contact.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55057115-F3E8-425E-A73A-FD3ED16A0425}|OfficeProject\\OfficeProject.csproj|c:\\users\\hp\\desktop\\c# asp.net mvc\\contact-aps.net-mvc\\officeproject\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55057115-F3E8-425E-A73A-FD3ED16A0425}|OfficeProject\\OfficeProject.csproj|solutionrelative:officeproject\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55057115-F3E8-425E-A73A-FD3ED16A0425}|OfficeProject\\OfficeProject.csproj|c:\\users\\hp\\desktop\\c# asp.net mvc\\contact-aps.net-mvc\\officeproject\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{55057115-F3E8-425E-A73A-FD3ED16A0425}|OfficeProject\\OfficeProject.csproj|solutionrelative:officeproject\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55057115-F3E8-425E-A73A-FD3ED16A0425}|OfficeProject\\OfficeProject.csproj|c:\\users\\hp\\desktop\\c# asp.net mvc\\contact-aps.net-mvc\\officeproject\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{55057115-F3E8-425E-A73A-FD3ED16A0425}|OfficeProject\\OfficeProject.csproj|solutionrelative:officeproject\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55057115-F3E8-425E-A73A-FD3ED16A0425}|OfficeProject\\OfficeProject.csproj|c:\\users\\hp\\desktop\\c# asp.net mvc\\contact-aps.net-mvc\\officeproject\\views\\contact\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{55057115-F3E8-425E-A73A-FD3ED16A0425}|OfficeProject\\OfficeProject.csproj|solutionrelative:officeproject\\views\\contact\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55057115-F3E8-425E-A73A-FD3ED16A0425}|OfficeProject\\OfficeProject.csproj|c:\\users\\hp\\desktop\\c# asp.net mvc\\contact-aps.net-mvc\\officeproject\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{55057115-F3E8-425E-A73A-FD3ED16A0425}|OfficeProject\\OfficeProject.csproj|solutionrelative:officeproject\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55057115-F3E8-425E-A73A-FD3ED16A0425}|OfficeProject\\OfficeProject.csproj|c:\\users\\hp\\desktop\\c# asp.net mvc\\contact-aps.net-mvc\\officeproject\\views\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{55057115-F3E8-425E-A73A-FD3ED16A0425}|OfficeProject\\OfficeProject.csproj|solutionrelative:officeproject\\views\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55057115-F3E8-425E-A73A-FD3ED16A0425}|OfficeProject\\OfficeProject.csproj|c:\\users\\hp\\desktop\\c# asp.net mvc\\contact-aps.net-mvc\\officeproject\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55057115-F3E8-425E-A73A-FD3ED16A0425}|OfficeProject\\OfficeProject.csproj|solutionrelative:officeproject\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,71 +62,176 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Create.cshtml",
-              "DocumentMoniker": "C:\\Users\\hp\\Desktop\\C# ASP.NET MVC\\Contact-APS.NET-MVC\\OfficeProject\\Views\\Contact\\Create.cshtml",
-              "RelativeDocumentMoniker": "OfficeProject\\Views\\Contact\\Create.cshtml",
-              "ToolTip": "C:\\Users\\hp\\Desktop\\C# ASP.NET MVC\\Contact-APS.NET-MVC\\OfficeProject\\Views\\Contact\\Create.cshtml",
-              "RelativeToolTip": "OfficeProject\\Views\\Contact\\Create.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-07-14T11:17:31.491Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\hp\\Desktop\\C# ASP.NET MVC\\Contact-APS.NET-MVC\\OfficeProject\\Views\\Contact\\Index.cshtml",
-              "RelativeDocumentMoniker": "OfficeProject\\Views\\Contact\\Index.cshtml",
-              "ToolTip": "C:\\Users\\hp\\Desktop\\C# ASP.NET MVC\\Contact-APS.NET-MVC\\OfficeProject\\Views\\Contact\\Index.cshtml",
-              "RelativeToolTip": "OfficeProject\\Views\\Contact\\Index.cshtml",
-              "ViewState": "AQIAADEAAAAAAAAAAAAYwDoAAABPAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-07-14T10:42:38.95Z",
+              "DocumentIndex": 5,
+              "Title": "Contact.cs",
+              "DocumentMoniker": "C:\\Users\\hp\\Desktop\\C# ASP.NET MVC\\Contact-APS.NET-MVC\\OfficeProject\\Models\\Contact.cs",
+              "RelativeDocumentMoniker": "OfficeProject\\Models\\Contact.cs",
+              "ToolTip": "C:\\Users\\hp\\Desktop\\C# ASP.NET MVC\\Contact-APS.NET-MVC\\OfficeProject\\Models\\Contact.cs",
+              "RelativeToolTip": "OfficeProject\\Models\\Contact.cs",
+              "ViewState": "AQIAAA0AAAAAAAAAAAAAABcAAAAqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-18T11:54:36.921Z",
+              "IsPinned": true,
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "ContactRepository.cs",
-              "DocumentMoniker": "C:\\Users\\hp\\Desktop\\C# ASP.NET MVC\\Contact-APS.NET-MVC\\OfficeProject\\Repository\\ContactRepository.cs",
-              "RelativeDocumentMoniker": "OfficeProject\\Repository\\ContactRepository.cs",
-              "ToolTip": "C:\\Users\\hp\\Desktop\\C# ASP.NET MVC\\Contact-APS.NET-MVC\\OfficeProject\\Repository\\ContactRepository.cs",
-              "RelativeToolTip": "OfficeProject\\Repository\\ContactRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-12T09:48:23.167Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
               "Title": "ContactController.cs",
               "DocumentMoniker": "C:\\Users\\hp\\Desktop\\C# ASP.NET MVC\\Contact-APS.NET-MVC\\OfficeProject\\Controllers\\ContactController.cs",
               "RelativeDocumentMoniker": "OfficeProject\\Controllers\\ContactController.cs",
               "ToolTip": "C:\\Users\\hp\\Desktop\\C# ASP.NET MVC\\Contact-APS.NET-MVC\\OfficeProject\\Controllers\\ContactController.cs",
               "RelativeToolTip": "OfficeProject\\Controllers\\ContactController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "ViewState": "AQIAAMoAAAAAAAAAAADwv88AAAApAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-12T09:39:20.859Z",
+              "WhenOpened": "2024-07-18T15:02:27.032Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "C:\\Users\\hp\\Desktop\\C# ASP.NET MVC\\Contact-APS.NET-MVC\\OfficeProject\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "OfficeProject\\Controllers\\AccountController.cs",
+              "ToolTip": "C:\\Users\\hp\\Desktop\\C# ASP.NET MVC\\Contact-APS.NET-MVC\\OfficeProject\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "OfficeProject\\Controllers\\AccountController.cs",
+              "ViewState": "AQIAACAAAAAAAAAAAAAqwCwAAAA9AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-15T13:17:47.229Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "OfficeProject",
-              "DocumentMoniker": "C:\\Users\\hp\\Desktop\\C# ASP.NET MVC\\Contact-APS.NET-MVC\\OfficeProject\\OfficeProject.csproj",
-              "RelativeDocumentMoniker": "OfficeProject\\OfficeProject.csproj",
-              "ToolTip": "C:\\Users\\hp\\Desktop\\C# ASP.NET MVC\\Contact-APS.NET-MVC\\OfficeProject\\OfficeProject.csproj",
-              "RelativeToolTip": "OfficeProject\\OfficeProject.csproj",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-07-12T09:39:06.42Z",
+              "Title": "ContactRepository.cs",
+              "DocumentMoniker": "C:\\Users\\hp\\Desktop\\C# ASP.NET MVC\\Contact-APS.NET-MVC\\OfficeProject\\Repository\\ContactRepository.cs",
+              "RelativeDocumentMoniker": "OfficeProject\\Repository\\ContactRepository.cs",
+              "ToolTip": "C:\\Users\\hp\\Desktop\\C# ASP.NET MVC\\Contact-APS.NET-MVC\\OfficeProject\\Repository\\ContactRepository.cs",
+              "RelativeToolTip": "OfficeProject\\Repository\\ContactRepository.cs",
+              "ViewState": "AQIAABsAAAAAAAAAAAAIwAoAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-18T12:15:18.881Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\hp\\Desktop\\C# ASP.NET MVC\\Contact-APS.NET-MVC\\OfficeProject\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "OfficeProject\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\hp\\Desktop\\C# ASP.NET MVC\\Contact-APS.NET-MVC\\OfficeProject\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "OfficeProject\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AQIAADkAAAAAAAAAAAAAAD8AAAAqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-18T14:15:58.629Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Register.cshtml",
+              "DocumentMoniker": "C:\\Users\\hp\\Desktop\\C# ASP.NET MVC\\Contact-APS.NET-MVC\\OfficeProject\\Views\\Account\\Register.cshtml",
+              "RelativeDocumentMoniker": "OfficeProject\\Views\\Account\\Register.cshtml",
+              "ToolTip": "C:\\Users\\hp\\Desktop\\C# ASP.NET MVC\\Contact-APS.NET-MVC\\OfficeProject\\Views\\Account\\Register.cshtml",
+              "RelativeToolTip": "OfficeProject\\Views\\Account\\Register.cshtml",
+              "ViewState": "AQIAABgAAAAAAAAAAAAqwCYAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-18T12:08:17.799Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "C:\\Users\\hp\\Desktop\\C# ASP.NET MVC\\Contact-APS.NET-MVC\\OfficeProject\\Views\\Account\\Login.cshtml",
+              "RelativeDocumentMoniker": "OfficeProject\\Views\\Account\\Login.cshtml",
+              "ToolTip": "C:\\Users\\hp\\Desktop\\C# ASP.NET MVC\\Contact-APS.NET-MVC\\OfficeProject\\Views\\Account\\Login.cshtml",
+              "RelativeToolTip": "OfficeProject\\Views\\Account\\Login.cshtml",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABUAAABOAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-18T12:31:26.839Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\hp\\Desktop\\C# ASP.NET MVC\\Contact-APS.NET-MVC\\OfficeProject\\Program.cs",
+              "RelativeDocumentMoniker": "OfficeProject\\Program.cs",
+              "ToolTip": "C:\\Users\\hp\\Desktop\\C# ASP.NET MVC\\Contact-APS.NET-MVC\\OfficeProject\\Program.cs",
+              "RelativeToolTip": "OfficeProject\\Program.cs",
+              "ViewState": "AQIAAAoAAAAAAAAAAAAqwBcAAAAlAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-18T12:26:03.792Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "site.css",
+              "DocumentMoniker": "C:\\Users\\hp\\Desktop\\C# ASP.NET MVC\\Contact-APS.NET-MVC\\OfficeProject\\wwwroot\\css\\site.css",
+              "RelativeDocumentMoniker": "OfficeProject\\wwwroot\\css\\site.css",
+              "ToolTip": "C:\\Users\\hp\\Desktop\\C# ASP.NET MVC\\Contact-APS.NET-MVC\\OfficeProject\\wwwroot\\css\\site.css",
+              "RelativeToolTip": "OfficeProject\\wwwroot\\css\\site.css",
+              "ViewState": "AQIAAAoAAAAAAAAAAAAqwBcAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-07-15T13:29:32.398Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UserRepository.cs",
+              "DocumentMoniker": "C:\\Users\\hp\\Desktop\\C# ASP.NET MVC\\Contact-APS.NET-MVC\\OfficeProject\\Repository\\UserRepository.cs",
+              "RelativeDocumentMoniker": "OfficeProject\\Repository\\UserRepository.cs",
+              "ToolTip": "C:\\Users\\hp\\Desktop\\C# ASP.NET MVC\\Contact-APS.NET-MVC\\OfficeProject\\Repository\\UserRepository.cs",
+              "RelativeToolTip": "OfficeProject\\Repository\\UserRepository.cs",
+              "ViewState": "AQIAABIAAAAAAAAAAAAYwBgAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-18T12:01:57.504Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\hp\\Desktop\\C# ASP.NET MVC\\Contact-APS.NET-MVC\\OfficeProject\\Models\\User.cs",
+              "RelativeDocumentMoniker": "OfficeProject\\Models\\User.cs",
+              "ToolTip": "C:\\Users\\hp\\Desktop\\C# ASP.NET MVC\\Contact-APS.NET-MVC\\OfficeProject\\Models\\User.cs",
+              "RelativeToolTip": "OfficeProject\\Models\\User.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-18T12:03:37.922Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\hp\\Desktop\\C# ASP.NET MVC\\Contact-APS.NET-MVC\\OfficeProject\\appsettings.json",
+              "RelativeDocumentMoniker": "OfficeProject\\appsettings.json",
+              "ToolTip": "C:\\Users\\hp\\Desktop\\C# ASP.NET MVC\\Contact-APS.NET-MVC\\OfficeProject\\appsettings.json",
+              "RelativeToolTip": "OfficeProject\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-07-18T12:14:28.27Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\hp\\Desktop\\C# ASP.NET MVC\\Contact-APS.NET-MVC\\OfficeProject\\Views\\Contact\\Create.cshtml",
+              "RelativeDocumentMoniker": "OfficeProject\\Views\\Contact\\Create.cshtml",
+              "ToolTip": "C:\\Users\\hp\\Desktop\\C# ASP.NET MVC\\Contact-APS.NET-MVC\\OfficeProject\\Views\\Contact\\Create.cshtml",
+              "RelativeToolTip": "OfficeProject\\Views\\Contact\\Create.cshtml",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAkAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-15T13:14:52.8Z",
               "EditorCaption": ""
             }
           ]

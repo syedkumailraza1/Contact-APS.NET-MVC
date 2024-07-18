@@ -26,6 +26,14 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\hp\Desktop\C# ASP.NET MVC\Contact-APS.NET-MVC\OfficeProject
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/hp/Desktop/C\# ASP.NET MVC/Contact-APS.NET-MVC/OfficeProject/Views/Account/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hp/Desktop/C\# ASP.NET MVC/Contact-APS.NET-MVC/OfficeProject/Views/Account/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/hp/Desktop/C\# ASP.NET MVC/Contact-APS.NET-MVC/OfficeProject/Views/Contact/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFjdFxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

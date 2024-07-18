@@ -20,6 +20,9 @@ namespace OfficeProject.Models
         [AtLeastOneSkillSelected(ErrorMessage = "Please select at least one skill.")]
         public string Skills { get; set; }
 
-        public bool isDeleted { get; set; }  // New property
+        public bool isDeleted { get; set; }
+        public bool isLogged { get; set; }
     }
+
+   
 }

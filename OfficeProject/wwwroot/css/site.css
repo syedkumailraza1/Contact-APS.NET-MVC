@@ -2,6 +2,28 @@ html {
   font-size: 14px;
 }
 
+
+body {
+    background-color: #f8f9fa;
+}
+
+.card {
+    margin-top: 50px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+  background:white
+}   
+
+.loginbtn {
+    width: 100%;
+}
+
+.login-input {
+    width: 100%;
+}
+
 @media print {
     .no-print {
         display: none !important;
